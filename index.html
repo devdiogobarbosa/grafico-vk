@@ -3,9 +3,6 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<!-- Favicon -->
-<link rel="icon" type="image/png" href="favicon.png">
-
 <title>Gráficos VK</title>
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels"></script>
@@ -23,7 +20,6 @@
   .viking-btn { transition: all 0.2s; font-weight:500; }
   .viking-btn:hover { transform: scale(1.05); box-shadow: 0 0 12px #b89ded; }
   .color-item { cursor: grab; display:flex; align-items:center; gap:8px; padding:6px 8px; border:1px solid #333; margin-bottom:6px; border-radius:6px; background:#1f1f1f; }
-  .color-index { width: 20px; text-align: center; color: #aaa; font-size: 14px; }
   input, select { border-radius:6px; }
 </style>
 </head>
@@ -34,16 +30,16 @@
   <div class="bg-gray-900 p-6 rounded-3xl shadow-2xl">
     <h2 class="text-xl font-semibold mb-4 text-white">Ordem das Cores (Arraste para reorganizar)</h2>
     <div id="colorList" class="flex flex-col gap-2">
-      <div class="color-item" data-color="#404040"><span class="color-index">1.</span><div style="width:20px;height:20px;background:#404040;"></div><span>#404040</span></div>
-      <div class="color-item" data-color="#8A8A8A"><span class="color-index">2.</span><div style="width:20px;height:20px;background:#8A8A8A;"></div><span>#8A8A8A</span></div>
-      <div class="color-item" data-color="#BFBFBF"><span class="color-index">3.</span><div style="width:20px;height:20px;background:#BFBFBF;"></div><span>#BFBFBF</span></div>
-      <div class="color-item" data-color="#FFFFFF"><span class="color-index">4.</span><div style="width:20px;height:20px;background:#FFFFFF;"></div><span>#FFFFFF</span></div>
-      <div class="color-item" data-color="#B89DED"><span class="color-index">5.</span><div style="width:20px;height:20px;background:#B89DED;"></div><span>#B89DED</span></div>
-      <div class="color-item" data-color="#5A23C5"><span class="color-index">6.</span><div style="width:20px;height:20px;background:#5A23C5;"></div><span>#5A23C5</span></div>
-      <div class="color-item" data-color="#3C696C"><span class="color-index">7.</span><div style="width:20px;height:20px;background:#3C696C;"></div><span>#3C696C</span></div>
-      <div class="color-item" data-color="#5A9EA3"><span class="color-index">8.</span><div style="width:20px;height:20px;background:#5A9EA3;"></div><span>#5A9EA3</span></div>
-      <div class="color-item" data-color="#90BEC2"><span class="color-index">9.</span><div style="width:20px;height:20px;background:#90BEC2;"></div><span>#90BEC2</span></div>
-      <div class="color-item" data-color="#CEE2E4"><span class="color-index">10.</span><div style="width:20px;height:20px;background:#CEE2E4;"></div><span>#CEE2E4</span></div>
+      <div class="color-item" data-color="#404040"><div style="width:20px;height:20px;background:#404040;"></div><span>#404040</span></div>
+      <div class="color-item" data-color="#8A8A8A"><div style="width:20px;height:20px;background:#8A8A8A;"></div><span>#8A8A8A</span></div>
+      <div class="color-item" data-color="#BFBFBF"><div style="width:20px;height:20px;background:#BFBFBF;"></div><span>#BFBFBF</span></div>
+      <div class="color-item" data-color="#FFFFFF"><div style="width:20px;height:20px;background:#FFFFFF;"></div><span>#FFFFFF</span></div>
+      <div class="color-item" data-color="#B89DED"><div style="width:20px;height:20px;background:#B89DED;"></div><span>#B89DED</span></div>
+      <div class="color-item" data-color="#5A23C5"><div style="width:20px;height:20px;background:#5A23C5;"></div><span>#5A23C5</span></div>
+      <div class="color-item" data-color="#3C696C"><div style="width:20px;height:20px;background:#3C696C;"></div><span>#3C696C</span></div>
+      <div class="color-item" data-color="#5A9EA3"><div style="width:20px;height:20px;background:#5A9EA3;"></div><span>#5A9EA3</span></div>
+      <div class="color-item" data-color="#90BEC2"><div style="width:20px;height:20px;background:#90BEC2;"></div><span>#90BEC2</span></div>
+      <div class="color-item" data-color="#CEE2E4"><div style="width:20px;height:20px;background:#CEE2E4;"></div><span>#CEE2E4</span></div>
     </div>
   </div>
 
@@ -81,11 +77,12 @@
     <h2 class="text-2xl font-semibold mb-4 text-white">Bem-vindo, Viking!</h2>
     <p class="mb-3">Aqui você pode criar gráficos interativos rapidamente:</p>
     <ol class="list-decimal list-inside mb-3 space-y-2">
+      <li>Use ponto <strong>( . ) para decimais</strong>, pois valores com vírgula não são reconhecidos.</li>
       <li>Digite os <strong>valores</strong> separados por ponto e vírgula (;).</li>
       <li>Digite as <strong>legendas</strong> correspondentes, também separadas por ponto e vírgula (;).</li>
       <li>Reordene as <strong>cores</strong> arrastando os itens à esquerda.</li>
       <li>Escolha o tipo de gráfico (Pizza, Barra ou Só Legenda).</li>
-      <li>Clique em <strong>Salvar PNG</strong> para baixar o gráfico ou clique com o botão direito, copie e cole direto no Canva.</li>
+      <li>Clique em <strong>Salvar PNG</strong> para baixar o gráfico ou copiar a legenda/gráfico direto.</li>
     </ol>
   </div>
 </div>
@@ -95,6 +92,7 @@ let colors = Array.from(document.querySelectorAll('#colorList .color-item')).map
 const chartCanvas = document.getElementById('chartCanvas');
 const legendContainer = document.getElementById('legendContainer');
 let chartInstance = null;
+let legendCanvas = null;
 
 function parseInput(input) {
   return input.split(';').map(x => x.trim()).filter(x => x !== '');
@@ -105,211 +103,187 @@ function getCurrentColors() {
   return colors;
 }
 
-function createLegend(labels, centralizado = false) {
-  legendContainer.innerHTML = '';
+function createLegend(labels, centralizado=false) {
+  legendContainer.innerHTML='';
   const cores = getCurrentColors();
-  
-  if (centralizado) {
-    // Centralizado na tela
-    legendContainer.style.display = 'flex';
-    legendContainer.style.flexDirection = 'column';
-    legendContainer.style.alignItems = 'center';
-    legendContainer.style.justifyContent = 'center';
-    legendContainer.style.height = '70vh';
-    legendContainer.style.gap = '16px';
 
-    // Criar duas linhas de até 5 itens
-    const primeiraLinha = document.createElement('div');
-    const segundaLinha = document.createElement('div');
-    primeiraLinha.style.display = 'flex';
-    primeiraLinha.style.gap = '40px';
-    primeiraLinha.style.justifyContent = 'center';
-    segundaLinha.style.display = 'flex';
-    segundaLinha.style.gap = '40px';
-    segundaLinha.style.justifyContent = 'center';
-
-    labels.forEach((label, i) => {
-      const item = document.createElement('div');
-      item.style.display = 'flex';
-      item.style.alignItems = 'center';
-      item.style.gap = '10px';
-      item.style.fontSize = '18px';
-      item.style.fontStyle = 'italic';
-      item.style.fontWeight = '600';
-      item.style.color = '#e0e0e0';
-
-      // Número da cor
-      const num = document.createElement('span');
-      num.textContent = `${i + 1}.`;
-      num.style.color = '#aaa';
-      num.style.width = '22px';
-      num.style.textAlign = 'right';
-      item.appendChild(num);
-
-      // Quadrado colorido
-      const box = document.createElement('div');
-      box.className = 'legend-box';
-      box.style.backgroundColor = cores[i] || '#ccc';
-      item.appendChild(box);
-
-      // Texto
-      const text = document.createElement('span');
-      text.textContent = label;
-      item.appendChild(text);
-
-      if (i < 5) primeiraLinha.appendChild(item);
-      else segundaLinha.appendChild(item);
-    });
-
-    legendContainer.appendChild(primeiraLinha);
-    if (labels.length > 5) legendContainer.appendChild(segundaLinha);
-    chartCanvas.width = chartCanvas.height = 0; // esconde canvas
+  if(centralizado){
+    drawLegendCanvas(labels);
+    chartCanvas.style.display='none';
   } else {
-    // Modo normal (Pizza/Barra)
-    legendContainer.style.display = 'flex';
-    legendContainer.style.flexWrap = 'wrap';
-    legendContainer.style.justifyContent = 'center';
-    legendContainer.style.alignItems = 'center';
-    legendContainer.style.gap = '10px';
-    legendContainer.style.height = 'auto';
+    legendContainer.style.display='flex';
+    legendContainer.style.flexWrap='wrap';
+    legendContainer.style.justifyContent='center';
+    legendContainer.style.alignItems='center';
+    legendContainer.style.gap='10px';
+    legendContainer.style.height='auto';
 
-    labels.forEach((label, i) => {
-      const item = document.createElement('div');
-      item.style.display = 'flex';
-      item.style.alignItems = 'center';
-      item.style.gap = '6px';
-      item.style.fontSize = '15px';
-      item.style.color = '#e0e0e0';
+    labels.forEach((label,i)=>{
+      const item=document.createElement('div');
+      item.style.display='flex';
+      item.style.alignItems='center';
+      item.style.gap='6px';
+      item.style.fontSize='15px';
+      item.style.color='#e0e0e0';
 
-      const num = document.createElement('span');
-      num.textContent = `${i + 1}.`;
-      num.style.color = '#aaa';
-      num.style.width = '20px';
-      num.style.textAlign = 'right';
-      item.appendChild(num);
-
-      const box = document.createElement('div');
-      box.className = 'legend-box';
-      box.style.backgroundColor = cores[i] || '#ccc';
+      const box=document.createElement('div');
+      box.className='legend-box';
+      box.style.backgroundColor=cores[i]||'#ccc';
       item.appendChild(box);
 
-      const text = document.createElement('span');
-      text.textContent = label;
+      const text=document.createElement('span');
+      text.textContent=label;
       item.appendChild(text);
 
       legendContainer.appendChild(item);
     });
+    chartCanvas.style.display='block';
   }
 }
 
-function drawPie(valuesInput, labelsInput) {
-  const values = parseInput(valuesInput).map(Number);
-  const labels = parseInput(labelsInput);
-  if (values.length !== labels.length) { alert('Erro: número de valores e legendas deve ser igual!'); return; }
-  createLegend(labels);
-  chartCanvas.width = 500; chartCanvas.height = 500;
-  if (chartInstance) chartInstance.destroy();
+// --- Legenda em canvas para exportar PNG ---
+function drawLegendCanvas(labels){
+  const cores = getCurrentColors();
+  const canvas = document.createElement('canvas');
+  const ctx = canvas.getContext('2d');
+  const fontSize = 18;
+  const squareSize = 35;
+  const textOffset = 15;
+  const rowHeight = 80;
+  const colSpacing = 60;
 
-  chartInstance = new Chart(chartCanvas, {
-    type: 'pie',
-    data: {
-      labels,
-      datasets: [{
-        data: values,
-        backgroundColor: getCurrentColors().slice(0, values.length),
-        borderColor: '#121212',
-        borderWidth: 2
-      }]
-    },
-    options: {
-      responsive: false,
-      plugins: {
-        legend: { display: false },
-        tooltip: { enabled: true },
-        datalabels: {
-          color: ctx => {
-            const bg = getCurrentColors()[ctx.dataIndex];
-            return bg.toUpperCase() === '#FFFFFF' ? '#BFBFBF' : '#FFFFFF';
-          },
-          font: { family: 'Montserrat', weight: '400', size: 26 },
-          formatter: (value, ctx) => {
-            const total = ctx.chart.data.datasets[0].data.reduce((a,b)=>a+b,0);
-            const percent = (value / total) * 100;
-            return percent < 1 ? '' : Math.round(percent) + '%';
-          },
-          anchor: 'center',
-          align: 'center'
+  ctx.font = `italic 600 ${fontSize}px Montserrat, Arial`;
+  const textWidths = labels.map(label=>ctx.measureText(label).width);
+
+  const columnWidths=[];
+  for(let col=0;col<5;col++){
+    const top=col*2,bottom=top+1;
+    let maxW=0;
+    if(top<labels.length) maxW=Math.max(maxW,textWidths[top]);
+    if(bottom<labels.length) maxW=Math.max(maxW,textWidths[bottom]);
+    if(maxW>0) columnWidths.push(maxW);
+  }
+
+  const totalWidth=columnWidths.reduce((sum,w)=>sum + squareSize + textOffset + w + colSpacing,0);
+  canvas.width=totalWidth+20;
+  canvas.height=rowHeight*2 + 20;
+
+  ctx.clearRect(0,0,canvas.width,canvas.height);
+  ctx.font=`italic 600 ${fontSize}px Montserrat, Arial`;
+  ctx.textBaseline='middle';
+  ctx.fillStyle='#e0e0e0';
+  let currentX=10;
+
+  for(let col=0;col<columnWidths.length;col++){
+    const colWidth=columnWidths[col];
+    for(let row=0;row<2;row++){
+      const index=col*2+row;
+      if(index>=labels.length) continue;
+      const y=10+row*rowHeight;
+
+      ctx.fillStyle=cores[index];
+      ctx.fillRect(currentX,y,squareSize,squareSize);
+      ctx.strokeStyle='#e0e0e0';
+      ctx.strokeRect(currentX,y,squareSize,squareSize);
+
+      ctx.fillStyle='#e0e0e0';
+      ctx.textAlign='start';
+      ctx.fillText(labels[index],currentX+squareSize+textOffset,y+squareSize/2);
+    }
+    currentX += squareSize + textOffset + colWidth + colSpacing;
+  }
+
+  legendContainer.innerHTML='';
+  legendContainer.appendChild(canvas);
+  legendCanvas=canvas;
+}
+
+// --- Gráficos ---
+function drawPie(valuesInput,labelsInput){
+  const values=parseInput(valuesInput).map(Number);
+  const labels=parseInput(labelsInput);
+  if(values.length!==labels.length){ alert('Erro: número de valores e legendas deve ser igual!'); return;}
+  createLegend(labels);
+  chartCanvas.width=700; chartCanvas.height=500;
+  if(chartInstance) chartInstance.destroy();
+
+  chartInstance=new Chart(chartCanvas,{
+    type:'pie',
+    data:{labels,datasets:[{data:values,backgroundColor:getCurrentColors().slice(0,values.length),borderColor:'#121212',borderWidth:2}]},
+    options:{
+      responsive:false,
+      plugins:{
+        legend:{display:false},
+        tooltip:{enabled:true},
+        datalabels:{
+          color:ctx=>{const bg=getCurrentColors()[ctx.dataIndex]; return bg.toUpperCase()==='#FFFFFF'?'#BFBFBF':'#FFFFFF';},
+          font:{family:'Montserrat',weight:'400',size:26},
+          formatter:(value,ctx)=>{const total=ctx.chart.data.datasets[0].data.reduce((a,b)=>a+b,0); const percent=(value/total)*100; return percent<1?'':Math.round(percent)+'%';},
+          anchor:'center', align:'center'
         }
       }
     },
-    plugins: [ChartDataLabels]
+    plugins:[ChartDataLabels]
   });
+  chartCanvas.style.display='block';
 }
 
-function drawBar(valuesInput, labelsInput) {
-  const values = parseInput(valuesInput).map(Number);
-  const labels = parseInput(labelsInput);
-  if (values.length !== labels.length) { alert('Erro: número de valores e legendas deve ser igual!'); return; }
-  createLegend(labels);
-  chartCanvas.width = 700; chartCanvas.height = 400;
-  if (chartInstance) chartInstance.destroy();
+function drawBar(valuesInput,labelsInput){
+  const values=parseInput(valuesInput).map(Number);
+  const labels=parseInput(labelsInput);
+  if(values.length!==labels.length){ alert('Erro: número de valores e legendas deve ser igual!'); return; }
+  if(chartInstance) chartInstance.destroy();
 
-  chartInstance = new Chart(chartCanvas, {
-    type: 'bar',
-    data: { 
-      labels, 
-      datasets: [{
-        data: values, 
-        backgroundColor: getCurrentColors().slice(0, values.length),
-        borderColor: '#121212',
-        borderWidth: 2
-      }] 
+  chartInstance=new Chart(chartCanvas,{
+    type:'bar',
+    data:{labels,datasets:[{data:values,backgroundColor:getCurrentColors().slice(0,values.length),borderColor:'#121212',borderWidth:2}]},
+    options:{
+      responsive:false,
+      plugins:{
+        legend:{display:false},
+        tooltip:{enabled:true},
+        datalabels:{
+          anchor:'end', align:'end', offset:10,
+          color:'#404040',
+          font:{family:'Montserrat',size:24,weight:'600'},
+          formatter:value=>value.toFixed(2)+'%'
+        }
+      },
+      scales:{x:{display:false},y:{display:false,suggestedMax:Math.max(...values)*1.25}}
     },
-    options: { 
-      responsive: false,
-      plugins: { 
-  legend: { display: false }, 
-  tooltip: { enabled: true }, 
-  datalabels: { 
-    anchor: 'end',
-    align: 'end',
-    color: ctx => {
-      const bg = getCurrentColors()[ctx.dataIndex];
-      return bg.toUpperCase() === '#FFFFFF' ? '#404040' : '#FFFFFF';
-    },
-    font: {
-      family: 'Montserrat',
-      size: 18,
-      weight: '600'
-    },
-    formatter: (value) => value
+    plugins:[ChartDataLabels]
+  });
+  chartCanvas.style.display='block';
+}
+
+function drawOnlyLegend(labelsInput){
+  const labels=parseInput(labelsInput);
+  if(chartInstance) chartInstance.destroy();
+  createLegend(labels,true);
+}
+
+// --- Eventos ---
+document.getElementById('btnPie').addEventListener('click',()=>drawPie(document.getElementById('valuesInput').value,document.getElementById('labelsInput').value));
+document.getElementById('btnBar').addEventListener('click',()=>drawBar(document.getElementById('valuesInput').value,document.getElementById('labelsInput').value));
+document.getElementById('btnLegend').addEventListener('click',()=>drawOnlyLegend(document.getElementById('labelsInput').value));
+
+document.getElementById('btnSave').addEventListener('click',()=>{
+  if(chartCanvas.style.display!=='none' && chartInstance){
+    const link=document.createElement('a');
+    link.href=chartCanvas.toDataURL('image/png');
+    link.download='grafico.png';
+    link.click();
+  } else if(legendCanvas){
+    const link=document.createElement('a');
+    link.href=legendCanvas.toDataURL('image/png');
+    link.download='legenda.png';
+    link.click();
+  } else {
+    alert('Nenhum gráfico ou legenda visível para salvar!');
   }
-},
-      scales: { x: { display: false }, y: { display: false } }
-    },
-    plugins: [ChartDataLabels]
-  });
-}
-
-function drawOnlyLegend(labelsInput) {
-  const labels = parseInput(labelsInput);
-  if (chartInstance) chartInstance.destroy();
-  createLegend(labels, true);
-}
-
-document.getElementById('btnPie').addEventListener('click', () => drawPie(document.getElementById('valuesInput').value, document.getElementById('labelsInput').value));
-document.getElementById('btnBar').addEventListener('click', () => drawBar(document.getElementById('valuesInput').value, document.getElementById('labelsInput').value));
-document.getElementById('btnLegend').addEventListener('click', () => drawOnlyLegend(document.getElementById('labelsInput').value));
-document.getElementById('btnSave').addEventListener('click', () => {
-  if (!chartInstance) { alert('Nenhum gráfico para salvar!'); return; }
-  const link = document.createElement('a');
-  link.href = chartCanvas.toDataURL('image/png');
-  link.download = 'grafico.png';
-  link.click();
 });
 
-new Sortable(document.getElementById('colorList'), { animation: 150, onEnd: evt => getCurrentColors() });
+new Sortable(document.getElementById('colorList'),{animation:150,onEnd:evt=>getCurrentColors()});
 </script>
-
 </body>
 </html>
